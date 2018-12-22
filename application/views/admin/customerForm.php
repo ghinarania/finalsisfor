@@ -173,6 +173,7 @@
                             <h2>
                                 TAMBAH DATA
                             </h2>
+                            <div style="color: red;"><?php echo validation_errors(); ?></div>
                             <!--<ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -187,7 +188,8 @@
                             </ul> -->
                         </div>
                         <div class="body">
-                            <form id="" method="POST" action="<?php echo site_url().'/Admin/customerTambah'?>">
+                            <?php echo form_open("Admin/customerTambah"); ?>
+                            
                                 <label for="email_address">ID</label>
                                 <div class="form-group">
                                     <div class="form-line">
@@ -245,13 +247,13 @@
                                 </div>
                                 <br>
 
-                                <div class="modal-footer">
+                                
                                         <a href="<?php echo base_url(); ?>admin/customer"><input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"></a>
-                                        <input type="submit" name="submit" class="btn btn-success" value="Add">
-                                </div>
+                                        <input type="submit" name='submit' class="btn btn-success" value="Add">
+                                
 
                                 
-                            </form>
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>

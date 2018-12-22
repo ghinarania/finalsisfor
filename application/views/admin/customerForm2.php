@@ -7,26 +7,23 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>Welcome To | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
-    <link rel="icon" href="<?php echo base_url() ?>favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="<?php echo base_url() ?>https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-    <link href="<?php echo base_url() ?>https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="<?php echo base_url() ?>/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?php echo base_url() ?>/node-waves/waves.css" rel="stylesheet" />
+    <link href="/node-waves/waves.css" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="<?php echo base_url() ?>/animate-css/animate.css" rel="stylesheet" />
+    <link href="/animate-css/animate.css" rel="stylesheet" />
 
     <!-- Morris Chart Css-->
-    <link href="<?php echo base_url() ?>/morrisjs/morris.css" rel="stylesheet" />
+    <link href="/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="<?php echo base_url() ?>assets/css/style.css" rel="stylesheet">
@@ -51,7 +48,7 @@
             </div>
             <p>Please wait...</p>
         </div>
-    </div> -->
+    </div>-->
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
@@ -99,12 +96,6 @@
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
-                            <li role="separator" class="divider"></li>
                             <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
                         </ul>
                     </div>
@@ -171,96 +162,134 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>NORMAL TABLES</h2>
+                <h2>FORM EXAMPLES</h2>
             </div>
-            <!-- Basic Table -->
+
+            <!-- Vertical Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                BASIC TABLES
-                                <small>Basic example without any additional modification classes</small>
+                                UBAH DATA
                             </h2>
-                            <ul class="header-dropdown m-r--5">
+                            <div style="color: red;"><?php echo validation_errors(); ?></div>
+                            <!--<ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
                                     <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <i class="material-icons">more_vert</i>
                                     </a>
                                     <ul class="dropdown-menu pull-right">
-                                        <li><a href="<?php echo site_url() ?>/admin/customerTambah">Tambah Data</a></li>
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
                                     </ul>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
-                        <div class="body table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>NAMA</th>
-                                        <th>EMAIL</th>
-                                        <th>NO. TELP</th>
-                                        <th>INSTAGRAM</th>
-                                        <th>TANGGAL LAHIR</th>
-                                        <th>PEKERJAAN</th>
-                                        <th>INSTANSI / UNIVERSITAS</th>
-                                        <th>ACTION</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                                                   
-                                    <tr>
-                                    <?php
-                                        if( ! empty($customer)){ // Jika data pegawai tidak sama dengan kosong, artinya jika data pegawai ada
-                                            foreach($customer as $data){
-                                            echo "<tr>
-                                            <td>".$data->id."</td>
-                                            <td>".$data->nama."</td>
-                                            <td>".$data->email."</td>
-                                            <td>".$data->telp."</td>
-                                            <td>".$data->instagram."</td>
-                                            <td>".$data->tanggallahir."</td>
-                                            <td>".$data->pekerjaan."</td>
-                                            <td>".$data->instansi."</td>
-                                            <td><a href='".base_url("admin/ubah/".$data->id)."' class='edit'> <i class='material-icons' title='Edit'>&#xE254;</i></a>
-                                                <a href='".base_url("admin/hapus/".$data->id)."' class='delete'><i class='material-icons' title='Delete'>&#xE872;</i></td>
-                                            </tr>";
-                                            }
-                                        }else{ // Jika data pegawai kosong
-                                            echo "<tr><td align='center' colspan='6'>Data Tidak Ada</td></tr>";
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
+                        <div class="body">
+                            <?php echo form_open("Admin/ubah/".$customer->id); ?>
+                                <label for="email_address">ID</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_id" placeholder="Enter your id" value="<?php echo set_value('input_id', $customer->id); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">NAMA</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_nama" placeholder="Enter your full name" value="<?php echo set_value('input_nama', $customer->nama); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">EMAIL</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_email" placeholder="Enter your email address" value="<?php echo set_value('input_email', $customer->email); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">NO. TELP</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_telp" placeholder="Enter your phone number" value="<?php echo set_value('input_telp', $customer->telp); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">INSTAGRAM</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_instagram" placeholder="Enter your instagram" value="<?php echo set_value('input_instagram', $customer->instagram); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">TANGGAL LAHIR</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_tanggallahir" placeholder="Enter your birth date (dd/mm/yyyy)" value="<?php echo set_value('input_tanggallahir', $customer->tanggallahir); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">PEKERJAAN</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_pekerjaan" placeholder="Enter your job" value="<?php echo set_value('input_pekerjaan', $customer->pekerjaan); ?>">
+                                    </div>
+                                </div>
+                                <br>
+                                <label for="email_address">INSTANSI / UNIVERSITAS</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="email_address" class="form-control" name="input_instansi" placeholder="Enter your workplace" value="<?php echo set_value('input_instansi', $customer->instansi); ?>">
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="modal-footer">
+                                        <a href="<?php echo base_url(); ?>admin/customer"><input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"></a>
+                                        <input type="submit" name="submit" class="btn btn-success" value="Add">
+                                </div>
+
+                                
+                            <?php echo form_close(); ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Table -->
+            <!-- #END# Vertical Layout -->
         </div>
     </section>
 
     <!-- Jquery Core Js -->
-    <script src="<?php echo base_url() ?>/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="<?php echo base_url() ?>/bootstrap/js/bootstrap.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap/js/bootstrap.js"></script>
 
     <!-- Select Plugin Js -->
-    <script src="<?php echo base_url() ?>/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Slimscroll Plugin Js -->
-    <script src="<?php echo base_url() ?>/jquery-slimscroll/jquery.slimscroll.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo base_url() ?>/node-waves/waves.js"></script>
+    <script src="<?php echo base_url() ?>/assets/plugins/node-waves/waves.js"></script>
+
+    <!-- Autosize Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="<?php echo base_url() ?>/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
-    <script src="<?php echo base_url() ?>assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/admin.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
-    <script src="<?php echo base_url() ?>assets/js/demo.js"></script>
+    <script src="<?php echo base_url() ?>/assets/js/demo.js"></script>
 </body>
-
 </html>

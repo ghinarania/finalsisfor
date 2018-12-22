@@ -22,7 +22,7 @@ class CusModel extends CI_Model {
     if($mode == "save")
       $this->form_validation->set_rules('input_id', 'id', 'required|numeric|max_length[5]');
     
-    $this->form_validation->set_rules('input_name', 'name', 'required|max_length[35]');
+    $this->form_validation->set_rules('input_nama', 'nama', 'required|max_length[35]');
     $this->form_validation->set_rules('input_email', 'email', 'required|max_length[35]');
     $this->form_validation->set_rules('input_telp', 'telp', 'required|max_length[35]');
     $this->form_validation->set_rules('input_instagram', 'instagram', 'required|max_length[35]');
@@ -40,7 +40,7 @@ class CusModel extends CI_Model {
   public function save(){
     $data = array(
       "id" => $this->input->post('input_id'),
-      "name" => $this->input->post('input_name'),
+      "nama" => $this->input->post('input_nama'),
       "email" => $this->input->post('input_email'),
       "telp" => $this->input->post('input_telp'),
       "instagram" => $this->input->post('input_instagram'),
@@ -55,7 +55,8 @@ class CusModel extends CI_Model {
   // Fungsi untuk melakukan ubah data pegawai berdasarkan nama pegawai
   public function edit($id){
     $data = array(
-      "name" => $this->input->post('input_name'),
+      "id" => $this->input->post('input_id'),
+      "nama" => $this->input->post('input_nama'),
       "email" => $this->input->post('input_email'),
       "telp" => $this->input->post('input_telp'),
       "instagram" => $this->input->post('input_instagram'),

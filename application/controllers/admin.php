@@ -45,7 +45,7 @@ class Admin extends CI_Controller {
 	if($this->input->post('submit')){ // Jika user mengklik tombol submit yang ada di form
       if($this->CusModel->validation("save")){ // Jika validasi sukses atau hasil validasi adalah TRUE
         $this->CusModel->save(); // Panggil fungsi save() yang ada di PegModel.php
-        redirect('customer');
+        redirect('admin/customer');
       }
     }
 		$this->load->view('admin/customerForm');	
@@ -55,19 +55,19 @@ class Admin extends CI_Controller {
     if($this->input->post('submit')){ // Jika user mengklik tombol submit yang ada di form
       if($this->CusModel->validation("update")){ // Jika validasi sukses atau hasil validasi adalah TRUE
         $this->CusModel->edit($id); // Panggil fungsi edit() yang ada di PegModel.php
-        redirect('customer');
+        redirect('admin/customer');
       }
     }
     
     $data['customer'] = $this->CusModel->view_by($id);
-    $this->load->view('customer/edit', $data);
+    $this->load->view('admin/customerForm2', $data);
 
     
   }
   
   public function hapus($id){
     $this->CusModel->delete($id); // Panggil fungsi delete() yang ada di PegModel.php
-    redirect('customer');
+    redirect('admin/customer');
   }
 
 	public function company() {
